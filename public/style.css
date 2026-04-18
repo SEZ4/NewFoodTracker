@@ -1,0 +1,17 @@
+body{
+    font-family: "Zain", sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --MainBackgroundColor: #FFF8DC;
+    --SecondaryBackgroundColor: #FFD700;
+    --MainTextColor: #111111;
+    --SecondaryTextColor: #444444;
+    --HiglightColor: #FFB347;
+    --ButtonsBackgroundColors: #FFD700;
+    --ButtosnTextColor: #111111;
+}
