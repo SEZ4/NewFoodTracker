@@ -1,5 +1,7 @@
 body{
     font-family: "Zain", sans-serif;
+    background-color: var(--bg-page-main);
+    padding: 10px;
 }
 *{
     padding: 0;
@@ -7,11 +9,71 @@ body{
     box-sizing: border-box;
 }
 :root{
-    --MainBackgroundColor: #FFF8DC;
-    --SecondaryBackgroundColor: #FFD700;
-    --MainTextColor: #111111;
-    --SecondaryTextColor: #444444;
-    --HiglightColor: #FFB347;
-    --ButtonsBackgroundColors: #FFD700;
-    --ButtosnTextColor: #111111;
+
+    /* PlotPoint ripped off Colors*/
+    --bg-page-main: #FFFFFF;
+    --bg-page-secondary: #FAFAFA;
+    --bg-surface-card: #FFFFFF;
+    --bg-surface-muted: #F1F3F5;
+    
+    --brand-yellow-main: #FACC15;
+    --brand-yellow-hover: #EAB308;
+    --brand-yellow-active: #CA8A04;
+    --brand-yellow-soft: #FEF9C3;
+
+    --text-heading: #111827;
+    --text-body: #374151;
+    --text-muted: #6B7280;
+    --text-disabled: #9CA3AF;
+
+    --border-default: #E5E7EB;
+    --border-muted: #F3F4F6;
+
+
+    --btn-primary-bg: #FACC15;
+    --btn-primary-bg-hover: #EAB308;
+    --btn-primary-text: #1F2937;
+    --btn-primary-border: #EAB308;
+
+    --input-bg: #FFFFFF;
+    --input-border: #D1D5DB;
+    --input-focus-border: var(--brand-yellow-main);
+    --input-focus-ring: rgba(250, 204, 21, 0.25);
+    --input-border-focus: #FACC15;
+    --input-text: #111827;
+    --input-placeholder-text: #9CA3AF;
 }
+
+.body{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.controlPanel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 80px;
+    padding: 5px 10px;
+    border: 2px solid var(--border-default);
+    border-radius: 12px;
+}
+.controlPanel-left{
+
+}
+.controlPanel-left > button{
+    outline: none;
+    border: 1px solid var(--btn-primary-border);
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    cursor: pointer;
+    padding: 5px;
+    font-size: 32px;
+    border-radius: 24px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+} /* Contine on the control panel styles */
