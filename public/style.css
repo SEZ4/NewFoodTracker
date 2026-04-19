@@ -95,6 +95,8 @@ body{
 .controlPanel-right > button:hover{
     background-color: var(--btn-primary-bg-hover);
 }
+
+
 .infoPanel{
     width: 100%;
     display: flex;
@@ -106,7 +108,7 @@ body{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1150px;
     border: 2px dashed var(--border-default);
     border-radius: 12px;
     padding: 15px;
@@ -118,6 +120,7 @@ body{
     list-style-type: none;
     width: 200px;
     position: relative;
+    color: var(--text-body);
 }
 .infoPanel-panel > div > ul > li{
     height: 70px;
@@ -138,5 +141,75 @@ body{
     z-index: 2;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
-    
+}
+.days-cellList{
+    width: 100px !important; 
+}
+.block-cell{
+    position: relative;
+    top: 5px;
+    width: 60px;
+    max-width: 60px !important;
+    height: 555px;
+    background-color: rgb(128, 128, 128);
+    border-radius: 16px;
+}
+.infoPanel-info > div{
+    border: 1px solid var(--border-default);
+    background-color: var(--bg-surface-muted);
+    border-radius: 12px;
+    width: 250px;
+    height: 100px;
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--text-muted);
+} 
+#curent-weightCount,
+#daily-calorieCount{
+    text-align: center;
+    font-size: 28px;
+    margin-top: 10px;
+    color: var(--text-body);
+}
+footer{
+    width: 100%;
+    max-width: 1150px;
+    margin-top: 10px;
+    text-align: end;
+    color: var(--text-body);
+    font-size: 16px;
+}
+
+@media(max-width: 1180px){
+    .infoPanel-panel{
+        max-width: 97.458vw;
+    }
+    .infoPanel-panel > div > ul{
+        width: 16.949vw;
+    }
+    .infoPanel-panel > div > ul > li{
+        height: 5.932vw;
+        font-size: 1.525vw;
+    }
+    .days-cellList{
+        width: 8.475vw;
+    }
+    .block-cell{
+        width: 5.085vw;
+        height: 47.034vw;
+    }
+    .infoPanel-info > div{
+        width: 21.186vw;
+        height: 8.475vw;
+        font-size: 1.356vw;
+    }
+    footer{
+        max-width: 97.458vw;
+        font-size: 1.356vw;
+    }
+    #curent-weightCount,
+    #daily-calorieCount{
+        font-size: 2.373vw;
+    }
 }
