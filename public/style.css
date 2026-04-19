@@ -1,6 +1,6 @@
 body{
     font-family: "Zain", sans-serif;
-    background-color: var(--bg-page-main);
+    background-color: var(--bg-page-secondary);
     padding: 10px;
 }
 *{
@@ -55,14 +55,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     height: 80px;
     padding: 5px 10px;
-    border: 2px solid var(--border-default);
+    border: 2px dashed var(--border-default);
     border-radius: 12px;
-}
-.controlPanel-left{
-
 }
 .controlPanel-left > button{
     outline: none;
@@ -71,9 +69,74 @@ body{
     color: var(--btn-primary-text);
     cursor: pointer;
     padding: 5px;
+    margin: 0 10px 0 0;
     font-size: 32px;
     border-radius: 24px;
     height: 45px;
     width: 45px;
     text-align: center;
+    transition: background-color 250ms ease-in-out;
 } /* Contine on the control panel styles */
+.controlPanel-right > button{
+    outline: none;
+    border: 1px solid var(--btn-primary-border);
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    cursor: pointer;
+    padding: 5px;
+    margin: 0px 0px 0 10px;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    transition: background-color 100ms ease-in-out;
+}
+.controlPanel-left > button:hover,
+.controlPanel-right > button:hover{
+    background-color: var(--btn-primary-bg-hover);
+}
+.infoPanel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+.infoPanel-panel{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    border: 2px dashed var(--border-default);
+    border-radius: 12px;
+    padding: 15px;
+}
+.infoPanel-panel > div{
+    margin: 0 10px;
+}
+.infoPanel-panel > div > ul{
+    list-style-type: none;
+    width: 200px;
+    position: relative;
+}
+.infoPanel-panel > div > ul > li{
+    height: 70px;
+    border: 2px solid var(--border-default);
+    border-top: none;
+    background-color: var(--bg-surface-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 0;
+    top: 5px;
+}
+.cell-headers{
+    border: 2px solid var(--input-border-focus) !important;
+    background-color: var(--bg-surface-card) !important;
+    border-radius: 12px;
+    z-index: 2;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    
+}
