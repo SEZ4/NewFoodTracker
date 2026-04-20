@@ -62,7 +62,7 @@ body{
     border: 2px dashed var(--border-default);
     border-radius: 12px;
 }
-.controlPanel-left > button{
+.controlPanel-left > div > div > button{
     outline: none;
     border: 1px solid var(--btn-primary-border);
     background-color: var(--btn-primary-bg);
@@ -77,6 +77,18 @@ body{
     text-align: center;
     transition: background-color 250ms ease-in-out;
 } /* Contine on the control panel styles */
+.addform-form{
+
+}
+.addform-form > form{
+    display: flex;
+    flex-direction: column;
+}
+.addform-form > form > input{
+    
+}
+
+
 .controlPanel-right > button{
     outline: none;
     border: 1px solid var(--btn-primary-border);
@@ -91,7 +103,7 @@ body{
     border-radius: 20px;
     transition: background-color 100ms ease-in-out;
 }
-.controlPanel-left > button:hover,
+.controlPanel-left > div > div > button:hover,
 .controlPanel-right > button:hover{
     background-color: var(--btn-primary-bg-hover);
 }
