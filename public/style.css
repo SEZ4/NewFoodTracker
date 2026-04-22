@@ -29,7 +29,6 @@ body{
     --border-default: #E5E7EB;
     --border-muted: #F3F4F6;
 
-
     --btn-primary-bg: #FACC15;
     --btn-primary-bg-hover: #EAB308;
     --btn-primary-text: #1F2937;
@@ -62,6 +61,27 @@ body{
     border: 2px dashed var(--border-default);
     border-radius: 12px;
 }
+.controlPanel-left{
+    display: flex;
+}
+.controlPanel-left > div{
+    margin: 0 10px 0 0;
+}
+.addform-form,
+.infoform-list{
+    margin: 10px 0;
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+    transform: translateY(-20px);
+}
+.listOpen{
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(0);
+}
 .controlPanel-left > div > div > button{
     outline: none;
     border: 1px solid var(--btn-primary-border);
@@ -69,7 +89,6 @@ body{
     color: var(--btn-primary-text);
     cursor: pointer;
     padding: 5px;
-    margin: 0 10px 0 0;
     font-size: 32px;
     border-radius: 24px;
     height: 45px;
@@ -77,18 +96,50 @@ body{
     text-align: center;
     transition: background-color 250ms ease-in-out;
 } /* Contine on the control panel styles */
-.addform-form{
-
-}
 .addform-form > form{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid var(--border-default);
+    background-color: var(--bg-surface-muted);
+    border-radius: 10px;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .addform-form > form > input{
-    
+    margin: 5px 0;
+    padding: 5px;
+    border: 2px solid var(--input-border);
+    background-color: var(--input-bg);
+    outline: none;
+    border-radius: 16px;
+    height: 35px;
+    width: 200px;
+    color: var(--input-text);
+    font-family: "Zain", sans-serif;
+    transition: all 250ms ease-in-out;
 }
-
-
+.addform-form > form > button{
+    border: 1px solid var(--btn-primary-border);
+    outline: none;
+    background-color: var(--btn-primary-bg);
+    border-radius: 26px;
+    text-align: center;
+    color: var(--btn-primary-text);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    transition: background-color 250ms ease-in-out;
+}
+.addform-form > form > input:focus{
+    border: 2px solid var(--input-focus-border);
+}
+.addform-form > form > button:hover{
+    background-color: var(--btn-primary-bg-hover);
+}
 .controlPanel-right > button{
     outline: none;
     border: 1px solid var(--btn-primary-border);
@@ -107,7 +158,23 @@ body{
 .controlPanel-right > button:hover{
     background-color: var(--btn-primary-bg-hover);
 }
-
+.infoform-list > ul{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style-type: none;
+    text-align: right;
+    border: 1px solid var(--border-default);
+    background-color: var(--bg-surface-muted);
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.infoform-list > ul > li{
+    color: var(--input-text);
+    border-bottom: 2px dotted var(--brand-yellow-main);
+}
 
 .infoPanel{
     width: 100%;

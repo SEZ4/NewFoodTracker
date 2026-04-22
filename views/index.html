@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 
     <script src="../public/script.js" defer></script>
+    <script src="../public/dynmicEvents.js" defer></script>
 
 </head>
 <body>
@@ -27,8 +28,10 @@
                         <form>
                             <input type="text" placeholder="First Meal" name="addform-firstMeal" required>
                             <input type="text" placeholder="Second Meal" name="addform-secondMeal">
+                            <input type="number" placeholder="Meal Calories" name="addForm-mealCalories" required>
                             <input type="date" name="addform-todayDate" required>
                             <button type="submit" id="addform-submit">✔</button>
+                            <!--Make Styles Better also make the Edit List-->
                         </form>
                     </div>
                 </div>
@@ -36,7 +39,7 @@
                     <div>
                         <button id="infoform-button">𝒊</button>
                     </div>
-                    <div>
+                    <div class="infoform-list">
                         <ul>
                             <li>something</li>
                             <li>another something</li>
