@@ -144,7 +144,9 @@ body{
     height: 30px !important;
     font-size: 14px;
 }
-.addform-form > form > input:focus{
+.addform-form > form > input:focus,
+.editform-form > form > input:focus,
+.addform-form > form > select:focus{
     border: 2px solid var(--input-focus-border);
 }
 .addform-form > form > button:hover{
