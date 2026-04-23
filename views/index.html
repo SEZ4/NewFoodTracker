@@ -29,7 +29,15 @@
                             <input type="text" placeholder="First Meal" name="addform-firstMeal" required>
                             <input type="text" placeholder="Second Meal" name="addform-secondMeal">
                             <input type="number" placeholder="Meal Calories" name="addForm-mealCalories" required>
-                            <input type="date" name="addform-todayDate" required>
+                            <select name="addForm-day" required>
+                                <option value="sunday">Sunday</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="firday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                            </select>
                             <button type="submit" id="addform-submit">✔</button>
                             <!--Make Styles Better also make the Edit List-->
                         </form>
@@ -49,7 +57,21 @@
                 </div>
             </div>
             <div class="controlPanel-right">
-                <button>Edit</button>
+                <div>
+                    <div>
+                        <button id="editform-button">Edit</button>
+                    </div>
+                    <div class="editform-form">
+                        <form>
+                            <input type="number" placeholder="Daily Calorie" name="editForm-dailyCalorie" required>
+                            <button type="submit">✔</button>
+                        </form>
+                        <form>
+                            <input type="number" placeholder="Curent Weight" name="editForm-currentweight" required>
+                            <button type="submit">✔</button>
+                        </form>
+                    </div>
+                </div>
                 <button>Clear content</button>
             </div>
         </div>

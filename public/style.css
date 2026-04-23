@@ -68,7 +68,8 @@ body{
     margin: 0 10px 0 0;
 }
 .addform-form,
-.infoform-list{
+.infoform-list,
+.editform-form{
     margin: 10px 0;
     position: absolute;
     z-index: 3;
@@ -96,7 +97,8 @@ body{
     text-align: center;
     transition: background-color 250ms ease-in-out;
 } /* Contine on the control panel styles */
-.addform-form > form{
+.addform-form > form,
+.editform-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +108,9 @@ body{
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.addform-form > form > input{
+.addform-form > form > input,
+.addform-form > form > select,
+.editform-form > form > input{
     margin: 5px 0;
     padding: 5px;
     border: 2px solid var(--input-border);
@@ -119,7 +123,8 @@ body{
     font-family: "Zain", sans-serif;
     transition: all 250ms ease-in-out;
 }
-.addform-form > form > button{
+.addform-form > form > button,
+.editform-form > form > button{
     border: 1px solid var(--btn-primary-border);
     outline: none;
     background-color: var(--btn-primary-bg);
@@ -134,28 +139,15 @@ body{
     height: 40px;
     transition: background-color 250ms ease-in-out;
 }
+.editform-form > form > button{
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px;
+}
 .addform-form > form > input:focus{
     border: 2px solid var(--input-focus-border);
 }
 .addform-form > form > button:hover{
-    background-color: var(--btn-primary-bg-hover);
-}
-.controlPanel-right > button{
-    outline: none;
-    border: 1px solid var(--btn-primary-border);
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-    cursor: pointer;
-    padding: 5px;
-    margin: 0px 0px 0 10px;
-    font-size: 18px;
-    height: 40px;
-    width: 120px;
-    border-radius: 20px;
-    transition: background-color 100ms ease-in-out;
-}
-.controlPanel-left > div > div > button:hover,
-.controlPanel-right > button:hover{
     background-color: var(--btn-primary-bg-hover);
 }
 .infoform-list > ul{
@@ -175,6 +167,33 @@ body{
     color: var(--input-text);
     border-bottom: 2px dotted var(--brand-yellow-main);
 }
+.controlPanel-right > button,
+.controlPanel-right > div > div > button{
+    outline: none;
+    border: 1px solid var(--btn-primary-border);
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    cursor: pointer;
+    padding: 5px;
+    margin: 0px 0px 0 10px;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    transition: background-color 100ms ease-in-out;
+}
+.controlPanel-left > div > div > button:hover,
+.controlPanel-right button:hover{
+    background-color: var(--btn-primary-bg-hover);
+}
+.controlPanel-right{
+    display: flex;
+}
+.editform-form > form{
+    display: flex;
+    align-items: center;
+}
+
 
 .infoPanel{
     width: 100%;
