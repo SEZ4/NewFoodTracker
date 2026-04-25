@@ -33,7 +33,7 @@ const pool = new Pool({
 app.post('/reset-week', async (req, res) => {
     try{
         await pool.query(`UPDATE weekinfo SET first_meal = '', second_meal = '', day_calorie = '' WHERE id >= 0`);
-        await pool.query(`UPDATE generalinfo SET daily_calorie = '', current_weight = '' WHERE id = 1`);
+        await pool.query(`UPDATE generalinfo SET daily_calorie = NULL, current_weight = NULL WHERE id = 1`);
 
         res.send("Weekly reset complete");
     } catch (error){
