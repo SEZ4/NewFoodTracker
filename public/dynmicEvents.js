@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     addForm.addEventListener('click', function(event){
         event.stopPropagation();
     })
+    addForm.children[0].addEventListener('submit', function(e){
+        e.preventDefault();
+        addForm.classList.remove('listOpen');
+    })
     infoButton.addEventListener('click', function(event){
         event.stopPropagation();
         infoForm.classList.add('listOpen');

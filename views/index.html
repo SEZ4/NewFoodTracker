@@ -25,8 +25,8 @@
                         <button id="addform-button">+</button>
                     </div>
                     <div class="addform-form">
-                        <form>
-                            <input type="text" placeholder="First Meal" name="addform-firstMeal" required>
+                        <form id="addform">
+                            <input type="text" placeholder="First Meal" name="addform-firstMeal">
                             <input type="text" placeholder="Second Meal" name="addform-secondMeal">
                             <input type="number" placeholder="Meal Calories" name="addForm-mealCalories" required>
                             <select name="addForm-day" required>
@@ -35,7 +35,7 @@
                                 <option value="tuesday">Tuesday</option>
                                 <option value="wednesday">Wednesday</option>
                                 <option value="thursday">Thursday</option>
-                                <option value="firday">Friday</option>
+                                <option value="friday">Friday</option>
                                 <option value="saturday">Saturday</option>
                             </select>
                             <button type="submit" id="addform-submit">✔</button>
@@ -49,9 +49,8 @@
                     </div>
                     <div class="infoform-list">
                         <ul>
-                            <li>something</li>
-                            <li>another something</li>
-                            <li>spmething</li>
+                            <li>Normal Plate => 535g</li>
+                            <li>Small Plate => 193g</li>
                         </ul>
                     </div>
                 </div>
@@ -63,11 +62,11 @@
                     </div>
                     <div class="editform-form">
                         <form>
-                            <input type="number" placeholder="Daily Calorie" name="editForm-dailyCalorie" required>
+                            <input type="number" placeholder="Daily Calorie" step="any" name="daily_calorie" required>
                             <button type="submit">✔</button>
                         </form>
                         <form>
-                            <input type="number" placeholder="Curent Weight" name="editForm-currentweight" required>
+                            <input type="number" placeholder="Curent Weight" step="any" name="current_weight" required>
                             <button type="submit">✔</button>
                         </form>
                     </div>

@@ -45,14 +45,82 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function weekinfoHandler(info){
         firstMealList.slice(1).forEach((element, index) => {
-            element.innerHTML = info[index + 1].first_meal;
+            console.log("Element index:", index, "DB index:", index+1, "Value:", info[index+1]);
+            element.innerHTML = info[index].first_meal;
         })
         secondMealList.slice(1).forEach((element, index) => {
-            element.innerHTML = info[index + 1].second_meal;
+            element.innerHTML = info[index].second_meal;
         })
         mealCalorieList.slice(1).forEach((element, index) => {
-            element.innerHTML = info[index + 1].day_calorie;
+            element.innerHTML = info[index].day_calorie;
         })
     }
+
+    let editForms = Array.from(document.querySelector('.editform-form').children);
+
+    updateGeneralInfo = function(value, place){
+        fetch('/api/updategeneralinfo', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ value, place }),
+        })
+            .then(function(responce){
+                if(!response.ok){
+                    throw new Error('Failed to update General info');
+                }
+            })
+            .catch(function(error){
+                console.error('Error Updating General info');
+            })
+
+        console.log('Updating Gen info')
+    }
+
+    editForms.forEach((element) => {
+        element.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let inputValue = String(element.children[0].value);
+            let inputName = String(element.children[0].name);
+
+            updateGeneralInfo(inputValue, inputName);
+            setTimeout(() => {
+                fetchGeneralInfo();
+            }, 500)
+        })
+    })
+
+    let addForm = document.getElementById('addform');
+
+
+    updateWeekInfo = function(firstMeal, secondMeal, calorie, place){
+        fetch('/api/updateweekinfo', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ firstMeal, secondMeal, calorie, place}),
+        })
+            .then(function(responce){
+                if(!response.ok){
+                    throw new Error('Failed to update Week info');
+                }
+            })
+            .catch(function(error){
+                console.error('Error Updating Week info');
+            })
+
+        console.log('Updating Week info')
+    }
+
+    addForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let firstMealValue = String(addForm.children[0].value);
+        let secondMealValue = String(addForm.children[1].value);
+        let mealCalorieValue = String(addForm.children[2].value);
+        let mealPlace = String(addForm.children[3].value);
+
+        updateWeekInfo(firstMealValue, secondMealValue, mealCalorieValue, mealPlace);
+        setTimeout(() => {
+            fetchWeekList();
+        }, 500)
+    })
     
 }) 
