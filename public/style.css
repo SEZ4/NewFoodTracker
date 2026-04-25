@@ -168,6 +168,7 @@ body{
 .infoform-list > ul > li{
     color: var(--input-text);
     border-bottom: 2px dotted var(--brand-yellow-main);
+    margin: 5px 0;
 }
 .controlPanel-right > button,
 .controlPanel-right > div > div > button{
