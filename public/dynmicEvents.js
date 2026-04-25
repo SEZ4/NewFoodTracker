@@ -44,4 +44,5 @@ document.addEventListener('DOMContentLoaded', function() {
         infoForm.classList.remove('listOpen');
         editForm.classList.remove('listOpen');
     })
+
 })

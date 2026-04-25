@@ -2,6 +2,7 @@ const { Pool } = require('pg');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const cron = require('node-cron');
 require('dotenv').config();
 
 const app = express();
@@ -19,6 +20,15 @@ const pool = new Pool({
     },
 });
 
+cron.schedule('0 0 * * 0', async () => {
+    try{
+        await pool.query(`UPDATE weekinfo SET first_meal = '', second_meal = '', day_calorie = '' WHERE id >= 0`);
+        await pool.query(`UPDATE generalinfo SET daily_calorie = '', current_weight = '' WHERE id = 1`)
+    } catch (error){
+        console.error('Error Scheduled Clearing Data', error);
+        res.status(500).json({ error: 'Internal Server Error'});
+    }
+})
 
 app.get('/api/generalinfo', async (req, res) => {
     try{
@@ -70,7 +80,14 @@ app.put('/api/updateweekinfo', express.json(), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 })
-
+app.put('/api/delteweekinfo', express.json(), async (req, res) => {
+    try{
+        const result = await pool.query(`UPDATE weekinfo SET first_meal = '', second_meal = '', day_calorie = '' WHERE id >= 0`);
+    } catch(error){
+        console.error('Error deleting data', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+})
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));

@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function weekinfoHandler(info){
         firstMealList.slice(1).forEach((element, index) => {
-            console.log("Element index:", index, "DB index:", index+1, "Value:", info[index+1]);
             element.innerHTML = info[index].first_meal;
         })
         secondMealList.slice(1).forEach((element, index) => {
@@ -72,8 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function(error){
                 console.error('Error Updating General info');
             })
-
-        console.log('Updating Gen info')
     }
 
     editForms.forEach((element) => {
@@ -107,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error Updating Week info');
             })
 
-        console.log('Updating Week info')
     }
 
     addForm.addEventListener('submit', function(e) {
@@ -121,6 +117,35 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             fetchWeekList();
         }, 500)
+    })
+
+    let deleteButton = document.getElementById('deleteButton');
+    let clickCounter = 0;
+    
+    deleteButton.addEventListener('click', function(){
+        clickCounter++;
+        if(clickCounter === 1){
+            deleteButton.style.backgroundColor = '#e2492d';
+            deleteButton.style.transition = 'color 250ms ease-in-out'
+            deleteButton.style.color = '#FFF'
+            deleteButton.innerHTML = 'are u Sure?'
+        } else if(clickCounter === 2){
+            deleteButton.attributeStyleMap.clear();
+            deleteButton.innerHTML = 'Clear content';
+
+            fetch('/api/delteweekinfo', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' }
+            })
+                .then( response => response.json())
+                .then(data => {
+
+                })
+            clickCounter = 0
+            setTimeout(() => {
+                fetchWeekList();
+            }, 500)
+        }
     })
     
 }) 

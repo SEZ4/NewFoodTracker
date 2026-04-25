@@ -175,6 +175,7 @@ body{
     outline: none;
     border: 1px solid var(--btn-primary-border);
     background-color: var(--btn-primary-bg);
+    font-family: "Zain", sans-serif;
     color: var(--btn-primary-text);
     cursor: pointer;
     padding: 5px;
@@ -183,7 +184,7 @@ body{
     height: 40px;
     width: 120px;
     border-radius: 20px;
-    transition: background-color 100ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
 }
 .controlPanel-left > div > div > button:hover,
 .controlPanel-right button:hover{
