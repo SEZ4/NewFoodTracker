@@ -295,8 +295,16 @@ footer > p > span > span{
 }
 
 @media(max-width: 1180px){
+    .infoPanel{
+        margin-top: 2.119vw;
+    }
     .infoPanel-panel{
         max-width: 97.458vw;
+        border-radius: 1.017vw;
+        padding: 1.271vw;
+    }
+    .infoPanel > div{
+        margin: 0 0.847vw;
     }
     .infoPanel-panel > div > ul{
         width: 16.949vw;
@@ -304,6 +312,12 @@ footer > p > span > span{
     .infoPanel-panel > div > ul > li{
         height: 5.932vw;
         font-size: 1.525vw;
+        border: 0.169vw solid var(--border-default);
+        top: 0.424vw;
+    }
+    .cell-headers{
+        border-radius: 1.017vw;
+        border: 0.169vw;
     }
     .days-cellList{
         width: 8.475vw;
@@ -311,15 +325,24 @@ footer > p > span > span{
     .block-cell{
         width: 5.085vw;
         height: 47.034vw;
+        top: 0.424vw;
+        border-radius: 1.356vw;
     }
     .infoPanel-info > div{
         width: 21.186vw;
         height: 8.475vw;
         font-size: 1.356vw;
+        border-radius: 1.017vw;
+        margin: 0.847vw 0;
+        padding: 0.424vw;
     }
     footer{
         max-width: 97.458vw;
         font-size: 1.356vw;
+        margin-top: 0.847vw;
+    }
+    footer > p > span > span{
+        font-size: 1.525vw;
     }
     #curent-weightCount,
     #daily-calorieCount{
