@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateGeneralInfo(inputValue, inputName);
             setTimeout(() => {
                 fetchGeneralInfo();
-            }, 500)
+            }, 1000)
         })
     })
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateWeekInfo(firstMealValue, secondMealValue, mealCalorieValue, mealPlace);
         setTimeout(() => {
             fetchWeekList();
-        }, 500)
+        }, 1000)
     })
 
     let deleteButton = document.getElementById('deleteButton');
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clickCounter = 0
             setTimeout(() => {
                 fetchWeekList();
-            }, 500)
+            }, 1000)
         }
     })
     
