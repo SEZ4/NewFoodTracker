@@ -6,7 +6,9 @@
 
 A simple table style Meal tracker, with functioning Insert and Delete into selected Days, Easy to use and User Friendly design with a weekly Action to clear the Table when the week is over.
 
-Made using node.js, Express.js and Neon DB uploaded on Vercel, this project was My intro into Back-End, Learning the basics of Node.js and dealing with SQL in Databases, the results were Great, I was able to make a day-to-day comfortable experience that can be used easily Everywhere. it was Made in a week. 
+Made using node.js, Express.js and Neon DB uploaded on Vercel, this project was My intro into Back-End, Learning the basics of Node.js and dealing with SQL in Databases, the results were Great, I was able to make a day-to-day comfortable experience that can be used easily Everywhere. it was Made in a week.
+
+project still underdevelopment as I'm still adding new features I think are useful and improving the already made features.
 
 ### How to use 🚀
 * Meal entries are made through the __**+**__ Dropdown menu

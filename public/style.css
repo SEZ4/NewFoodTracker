@@ -144,6 +144,9 @@ body{
     height: 30px !important;
     font-size: 14px;
 }
+#suger-streak-resetButton{
+    width: 230px !important;
+}
 .addform-form > form > input:focus,
 .editform-form > form > input:focus,
 .addform-form > form > select:focus{
@@ -268,7 +271,8 @@ body{
     color: var(--text-muted);
 } 
 #curent-weightCount,
-#daily-calorieCount{
+#daily-calorieCount,
+#suger-streak{
     text-align: center;
     font-size: 28px;
     margin-top: 10px;

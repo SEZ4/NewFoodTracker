@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const dailyCalorie = document.getElementById('daily-calorieCount');
     const currentWeight = document.getElementById('curent-weightCount');
+    const sugerStreak = document.getElementById('suger-streak');
 
     let firstMealList = Array.from(document.getElementById('firstMealList').children);
     let secondMealList = Array.from(document.getElementById('secondMealList').children);
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else{
             dailyCalorie.innerHTML = `${info[0].daily_calorie} Ca`;
         }
+        sugerStreak.innerHTML = `${info[0].suger_streak} Days`
     }
     function weekinfoHandler(info){
         firstMealList.slice(1).forEach((element, index) => {
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     let editForms = Array.from(document.querySelector('.editform-form').children);
+    let sugerStreakButton = document.getElementById('suger-streak-resetButton');
 
     updateGeneralInfo = function(value, place){
         fetch('/api/updategeneralinfo', {
@@ -84,6 +87,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetchGeneralInfo();
             }, 1000)
         })
+    })
+    sugerStreakButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        let value = '1';
+        let place = 'suger_streak';
+        updateGeneralInfo(value, place);
+
+        setTimeout(() => {
+                fetchGeneralInfo();
+        }, 1000)
     })
 
     let addForm = document.getElementById('addform');
