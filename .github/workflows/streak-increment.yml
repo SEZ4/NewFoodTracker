@@ -1,0 +1,14 @@
+name: Streak increment
+
+on:
+  schedule:
+    - cron : '0 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  increment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call increment endpoint
+        run: |
+            curl -X POST https://new-food-tracker.vercel.app/streak-increment

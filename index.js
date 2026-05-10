@@ -41,6 +41,16 @@ app.post('/reset-week', async (req, res) => {
         res.status(500).send("Error resetting week");
     }
 })
+app.post('/streak-increment', async (req, res) => {
+    try{
+        await pool.query(`UPDATE generalinfo SET suger_streak = COALESCE(suger_streak, 0) + 1 WHERE id = 1`);
+
+        res.send("Daily Streak increment");
+    } catch(error){
+        console.error(error);
+        res.status(500).send("error in Daily streak increment")
+    }
+})
 
 app.get('/api/generalinfo', async (req, res) => {
     try{
