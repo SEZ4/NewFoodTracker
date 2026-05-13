@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     sugerStreakButton.addEventListener('click', function(e) {
         e.preventDefault();
-        let value = '1';
+        let value = 1;
         let place = 'suger_streak';
         updateGeneralInfo(value, place);
 
