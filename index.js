@@ -45,7 +45,7 @@ app.post('/streak-increment', async (req, res) => {
     try{
         await pool.query(`
         UPDATE generalinfo
-        SET suger_streak = COALESCE(suger_streak, 0) + 1
+        SET suger_streak = suger_streak + 1
         WHERE id = 1;
         `);
 
